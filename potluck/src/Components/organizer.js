@@ -38,6 +38,7 @@ export default function Organizer() {
     //creating helper functions
     
     //This function to be filled when connecting to an API
+    //for now it pushes data to an empty array
     const postNewPotluck = newPotluck => {
         setOrganizer({ ...organizer, newPotluck});
     }
