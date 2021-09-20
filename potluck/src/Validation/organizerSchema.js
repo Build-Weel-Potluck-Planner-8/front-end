@@ -19,10 +19,10 @@ const organizerSchema = yup.object().shape({
         .string()
         .required('Location is required'),
     items: yup
-        .lazy(val => (Array.isArray(val) ? yup.array().of(yup.string()) : yup.string()))
+        .string()
         .required('Please types what items you would like at your potluck'),
     guests: yup
-        .lazy(val => (Array.isArray(val) ? yup.array().of(yup.string()) : yup.string()))
+        .string()
         .required('Please include the names of your guests')
 })
 
