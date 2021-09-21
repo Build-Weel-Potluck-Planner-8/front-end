@@ -1,9 +1,10 @@
-import React from 'react';
-import { Route, Switch, Link } from 'react-router-dom';
+import React, { component }from 'react';
+import { Route, Switch, Link, BrowserRouter } from 'react-router-dom';
 import Home from './home';
 import Organizer from './organizer';
 import Guest from './guest';
 import styled from 'styled-components';
+import { AccountBox } from "./accountBox";
 
 const StyledNav = styled.nav`
   background-image: url('https://images.unsplash.com/photo-1498676077434-7540603d2dda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80');
@@ -50,7 +51,7 @@ const StyledNav = styled.nav`
 
 const App = () => {
   return (
-    <>
+    <BrowserRouter>
       <StyledNav>
         <h1><span>Potluck</span> Planner</h1>
         <div>
@@ -70,9 +71,11 @@ const App = () => {
           <Route path='/'>
             <Home />
           </Route>
+          <Route path="/signin" component={AccountBox} />
+          <Route path="/signup" component={AccountBox} />
         </Switch>
       }
-    </>
+    </BrowserRouter>
   );
 }
 
