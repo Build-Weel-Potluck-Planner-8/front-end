@@ -4,7 +4,7 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 //setting up initial values
-const initialOrganizer = []
+// const initialOrganizer = []
 
 const initialFormValues = {
     host: '',
@@ -31,7 +31,7 @@ const initialDisabled = true
 export default function Organizer() {
 
     //setting up state
-    const [organizer, setOrganizer] = useState(initialOrganizer)
+    // const [organizer, setOrganizer] = useState(initialOrganizer)
     const [formValues, setFormValues] = useState(initialFormValues);
     const [formErrors, setFormErrors] = useState(initialFormErrors);
     const [disabled, setDisabled] = useState(initialDisabled);
@@ -40,8 +40,13 @@ export default function Organizer() {
     
     //This function to be filled when connecting to an API
     //for now it pushes data to an empty array
+    //pushing data to mocked api through reqres.in
     const postNewPotluck = newPotluck => {
-        setOrganizer({ ...organizer, newPotluck});
+        axios.post('https://reqres.in/api/potluck', newPotluck)
+            .then(res => {
+                console.log(res.data);
+            }).catch(err => console.error(err))
+        
     }
 
     const validate = (name, value) => {

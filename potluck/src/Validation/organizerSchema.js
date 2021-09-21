@@ -20,7 +20,7 @@ const organizerSchema = yup.object().shape({
         .required('Location is required'),
     items: yup
         .string()
-        .required('Please types what items you would like at your potluck'),
+        .required('Please type what items you would like at your potluck'),
     guests: yup
         .string()
         .required('Please include the names of your guests')
