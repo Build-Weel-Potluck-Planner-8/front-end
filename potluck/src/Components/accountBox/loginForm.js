@@ -33,13 +33,13 @@ export function LoginForm(props) {
     //   .then( res => {
     //     localStorage.setItem("token", res.data.token);
     //     localStorage.setItem("role", res.data.role);
-    //     props.history.push('/classes')
+    //     props.history.push('/potluck')
     //   })
     //   .catch(err=> {
     //     console.log(err);
     //   })
-    credentials.email === 'instructor' ? localStorage.setItem("role", "instructor"): localStorage.setItem("role", "client");
-    localStorage.getItem("role") === 'instructor' ? props.history.push("/classes"): props.history.push("/upcoming-classes")
+    credentials.email === 'potluck' ? localStorage.setItem("role", "potluck"): localStorage.setItem("role", "client");
+    localStorage.getItem("role") === 'potluck' ? props.history.push("/classes"): props.history.push("/upcoming-classes")
   };
 
   return (
