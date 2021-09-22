@@ -71,9 +71,11 @@ const App = () => {
       </StyledNav>
       {<AppContainer>
         <Switch>
-          <Route path='/signin'>
+        <Route path="/signin" component={AccountBox} />
+          <Route path="/signup" component={AccountBox} />
+          {/* <Route path='/signin'>
             <AccountBox/>
-          </Route>
+          </Route> */}
           <Route path='/organizer'>
             <Organizer />
           </Route>
