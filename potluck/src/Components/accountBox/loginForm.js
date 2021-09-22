@@ -1,5 +1,4 @@
-import React, { useContext, useState } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import {
   BoldLink,
   BoxContainer,
@@ -13,57 +12,16 @@ import { AccountContext } from "./accountContext";
 export function LoginForm(props) {
   const { switchToSignup } = useContext(AccountContext);
 
-  const initialCredentials = {
-    email: "",
-    password: "",
-  };
-
-  const [credentials, setCredentials] = useState(initialCredentials);
-
-  const handleChange = (e) => {
-    setCredentials({
-      ...credentials,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const signIn = (e) => {
-    // UNCOMMENT AND UPDATE WHEN WE HAVE AN API IN PLACE:
-    // axios.post('LOGIN API LINK', credentials)
-    //   .then( res => {
-    //     localStorage.setItem("token", res.data.token);
-    //     localStorage.setItem("role", res.data.role);
-    //     props.history.push('/potluck')
-    //   })
-    //   .catch(err=> {
-    //     console.log(err);
-    //   })
-    credentials.email === 'potluck' ? localStorage.setItem("role", "potluck"): localStorage.setItem("role", "client");
-    localStorage.getItem("role") === 'potluck' ? props.history.push("/classes"): props.history.push("/upcoming-classes")
-  };
-
   return (
     <BoxContainer>
       <FormContainer>
-        <Input
-          name="email"
-          type="email"
-          placeholder="Email"
-          onChange={handleChange}
-        />
-        <Input
-          name="password"
-          type="password"
-          placeholder="Password"
-          onChange={handleChange}
-        />
+        <Input type="email" placeholder="Email" />
+        <Input type="password" placeholder="Password" />
       </FormContainer>
       <MutedLink href="#">Forget your password?</MutedLink>
-      <SubmitButton type="submit" onClick={signIn}>
-        Signin
-      </SubmitButton>
+      <SubmitButton type="submit">Signin</SubmitButton>
       <MutedLink href="#">
-        Don't have an account?{" "}
+        Don't have an accoun?{" "}
         <BoldLink href="#" onClick={switchToSignup}>
           Signup
         </BoldLink>
