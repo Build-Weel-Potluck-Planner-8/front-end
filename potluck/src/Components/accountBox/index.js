@@ -148,8 +148,8 @@ export function AccountBox(props) {
           )}
         </TopContainer>
         <InnerContainer>
-          {active === "signin" && <LoginForm />}
-          {active === "signup" && <SignupForm />}
+          {active === "signin" && <LoginForm history={props.history}/>}
+          {active === "signup" && <SignupForm history={props.history}/>}
         </InnerContainer>
       </BoxContainer>
     </AccountContext.Provider>
