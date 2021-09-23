@@ -42,6 +42,7 @@ margin: 0 5%;
         font-size: 0.9rem;
      }
      p {
+         margin-top:0%;
         font-size: 0.8rem;
         text-align: center;
     }
@@ -62,30 +63,37 @@ margin: 0 5%;
         margin: 1% 22% 1% 5%;
     }
     .host {
+        align-items:center;
         display:flex;
         justify-content: flex-end;
     }
     .potluck {
+        align-items:center;
         display:flex;
         justify-content:flex-end;
     }
     .date {
+        align-items:center;
         display:flex;
         justify-content:flex-end;
     }
     .time{
+        align-items:center;
         display:flex;
         justify-content:flex-end;
     }
     .location{
+        align-items:center;
         display:flex;
         justify-content:flex-end;
     }
     .items{
+        align-items:center;
         display:flex;
         justify-content:flex-end;
     }
     .guests{
+        align-items:center;
         display:flex;
         justify-content:flex-end;
     }

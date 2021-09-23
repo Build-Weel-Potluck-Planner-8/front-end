@@ -41,11 +41,14 @@ const StyledDiv = styled.div`
        font-size: 0.9rem;
     }
     p {
+        margin-top:0%;
         font-size: 0.8rem;
         text-align: center;
     }
     .error{
         color:red;
+        font-size:0.65rem;
+        text-align:center;
     }
     .name{
         align-items:center;
@@ -57,8 +60,8 @@ const StyledDiv = styled.div`
         border-radius: 7px;
         margin-left: 5%;
         margin-right:22%;
-        margin-top:1.5%;
-        margin-bottom:1.5%;
+        margin-top:2%;
+        margin-bottom:2%;
     }
     .plusOne {
         align-items:center;
@@ -68,8 +71,10 @@ const StyledDiv = styled.div`
     .items {
         display:flex;
         justify-content: flex-end;
+        align-items: center;
     }
     .special {
+        align-items:center;
         display:flex;
         justify-content: flex-end;
     }
