@@ -2,7 +2,124 @@ import React, { useState, useEffect } from 'react';
 import schema from '../Validation/organizerSchema';
 import * as yup from 'yup';
 import axios from 'axios';
+import styled from 'styled-components';
 
+//css stylings:
+const StyledDiv = styled.div`
+margin: 0 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 7%;
+    background-image: url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 800px;
+    max-width:100%;
+    flex-wrap:wrap;
+    
+
+    form {
+        background-color: white;
+        opacity: 90%;
+        border: 2px solid orange;
+        border-radius: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap:wrap;
+        height: 50%;
+        width: 43%
+       
+        
+    }  
+    h2 {
+        width: 100%;
+        color: red;
+        tex-align:center
+        padding-top: 0%;
+        margin-top:1%;
+        padding-bottom: 0%;
+        text-shadow: 1px 1px orange;
+        text-decoration: underline;
+        margin-bottom:3.5%;
+        text-align: center;
+    }
+    .subText {
+        margin-top: -2%;
+        text-align: center;
+        font-size: 0.9rem;
+        margin-bottom:2%;
+     }
+     p {
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .error{
+        color:red;
+    }
+    input[type=text] {
+        border-radius: 7px;
+        margin-right:22%;
+        margin-left:5%;
+    }
+    input[type=time]{
+        border-radius: 7px;
+        margin-right:22%;
+        margin-left:5%;
+        padding: 0 5%;
+    }
+    input[type=date]{
+        border-radius: 7px;
+        margin-right:22%;
+        margin-left:5%;
+    }
+    .host {
+        margin-bottom:2%;
+        display:flex;
+        justify-content: flex-end;
+    }
+    .potluck {
+        margin-bottom:2%;
+        display:flex;
+        justify-content:flex-end;
+    }
+    .date {
+        margin-bottom:2%;
+        display:flex;
+        justify-content:flex-end;
+    }
+    .time{
+        margin-bottom:2%;
+        display:flex;
+        justify-content:flex-end;
+    }
+    .location{
+        margin-bottom:2%;
+        display:flex;
+        justify-content:flex-end;
+    }
+    .items{
+        display:flex;
+        justify-content:flex-end;
+    }
+    .guests{
+        display:flex;
+        justify-content:flex-end;
+    }
+    .button{
+        diplay:flex;
+        justify-content:center;
+       text-align:center;
+    }
+    button:hover:enabled {
+        transition: all 1s;
+        transform: scale(1.2);
+        background-color: black;
+        color: green;
+    }
+
+`
 //setting up initial values
 // const initialOrganizer = []
 
@@ -92,10 +209,13 @@ export default function Organizer() {
     } 
 
     return (
+        <StyledDiv>
         <form onSubmit={onSubmit}>
             <div>
-                <h2>Let's get this potluck started!</h2>
-                <p>Please enter the details of the potluck and the organizer</p>
+                <h2>Potluck Organizer Form</h2>
+                <div className = 'subText'>
+                <p>Please enter the your details and let's get this potluck started!</p>
+                </div>
             </div>
 
             <div>
@@ -109,8 +229,9 @@ export default function Organizer() {
             </div>
 
             <div>
+                <div className='host'>
                 <label>
-                    Host's Name
+                    Host's Name:
                 </label>    
                 <input 
                     value={formValues.host}
@@ -118,9 +239,10 @@ export default function Organizer() {
                     name='host'
                     type='text'
                 />
-                
+                </div>
+                <div className='potluck'>
                 <label>
-                    Potluck Name
+                    Potluck Name:
                 </label>    
                 <input 
                     value={formValues.potluck}
@@ -128,9 +250,10 @@ export default function Organizer() {
                     name='potluck'
                     type='text'
                 />
-                
+                </div>
+                <div className='date'>
                 <label>
-                    Date
+                    Date:
                 </label>    
                 <input 
                     value={formValues.date}
@@ -138,9 +261,10 @@ export default function Organizer() {
                     name='date'
                     type='date'
                 />
-                
+                </div>
+                <div className='time'>
                 <label>
-                    Time
+                    Time:
                 </label>    
                 <input 
                     value={formValues.time}
@@ -148,9 +272,10 @@ export default function Organizer() {
                     name='time'
                     type='time'
                 />
-                
+                </div>
+                <div className='location'>
                 <label>
-                    Location
+                    Location:
                 </label>
                 <input 
                     value={formValues.location}
@@ -158,9 +283,10 @@ export default function Organizer() {
                     name='location'
                     type='text'
                 />
+                </div>
+                <div className='items'>
                 <label>
-                    Items
-                    <p>please separate each item with a comma</p>
+                    Items:
                 </label>
                 <input 
                     value={formValues.items}
@@ -168,9 +294,11 @@ export default function Organizer() {
                     name='items'
                     type='text'
                 />
+                </div>
+                <p>(please separate each item with a comma)</p>
+                <div className='guests'>
                 <label>
-                    Guests
-                    <p>please separate each guest with a comma</p>
+                    Guests:
                 </label>
                 <input 
                     value={formValues.guests}
@@ -178,8 +306,13 @@ export default function Organizer() {
                     name='guests'
                     type='text'
                 />
+                </div>
+                <p>(please separate each guest with a comma)</p>
             </div>
+            <div className='button'>
             <button disabled={disabled}>Let the fun times begin!</button>
+            </div>
         </form>
+        </StyledDiv>
     )
 }
