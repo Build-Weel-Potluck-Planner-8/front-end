@@ -6,8 +6,8 @@ import { AccountContext } from "./accountContext";
 import { SignupForm } from "./signupForm";
 
 const BoxContainer = styled.div`
-  width: 350px;
-  min-height: 650px;
+  width: 300px;
+  min-height: 300px;
   display: flex;
   flex-direction: column;
   border-radius: 19px;
@@ -19,12 +19,12 @@ const BoxContainer = styled.div`
 
 const TopContainer = styled.div`
   width: 100%;
-  height: 300px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 1.8em;
-  padding-bottom: 5em;
+  padding: 0 1.6em;
+  padding-bottom: 1.1em;
 `;
 
 const BackDrop = styled(motion.div)`
@@ -37,15 +37,16 @@ const BackDrop = styled(motion.div)`
   transform: rotate(60deg);
   top: -290px;
   left: -70px;
-  background: rgb(2,0,36);
-background: linear-gradient(56deg, rgba(2,0,36,1) 0%, rgba(9,54,121,1) 33%);
+  background: rgb(58,180,100);
+background: linear-gradient(90deg, rgba(58,180,100,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+
 `;
 
 const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 15vh;
+  /* height: 15vh; */
 `;
 
 const HeaderText = styled.h2`
@@ -70,7 +71,7 @@ const InnerContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 0 1.8em;
+  padding: 0 1.2em;
 `;
 
 const backdropVariants = {
@@ -147,7 +148,7 @@ export function AccountBox(props) {
           )}
         </TopContainer>
         <InnerContainer>
-          {active === "signin" && <LoginForm history={props.history} />}
+          {active === "signin" && <LoginForm history={props.history}/>}
           {active === "signup" && <SignupForm history={props.history}/>}
         </InnerContainer>
       </BoxContainer>

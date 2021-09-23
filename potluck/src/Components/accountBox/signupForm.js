@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-// import axios from 'axios'
+import axios from 'axios'
 import {
   BoldLink,
   BoxContainer,
@@ -31,17 +31,14 @@ export function SignupForm(props) {
   }
 
   const signUp = e => {
-    // UNCOMMENT AND UPDATE WHEN WE HAVE AN API IN PLACE:
-      // axios.post('LOGIN API LINK', signUpInfo)
-      //   .then( res => {
-      //     localStorage.setItem("token", res.data.token);
-      //     localStorage.setItem("role", res.data.role);
-      //     props.history.push('/classes')
-      //   })
-      //   .catch(err=> {
-      //     console.log(err);
-      //   })
-    props.history.push('/classes')
+      axios.post('/users/register', signUpInfo)
+        .then( res => {
+          localStorage.setItem("token", res.data.token);
+          props.history.push('/classes')
+        })
+        .catch(err=> {
+          console.log(err);
+        })
   }
 
   return (

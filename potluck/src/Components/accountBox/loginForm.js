@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import axios from "axios";
 import {
   BoldLink,
   BoxContainer,
@@ -9,6 +8,8 @@ import {
   SubmitButton,
 } from "./common";
 import { AccountContext } from "./accountContext";
+import axios from 'axios';
+
 
 export function LoginForm(props) {
   const { switchToSignup } = useContext(AccountContext);
@@ -26,21 +27,16 @@ export function LoginForm(props) {
       [e.target.name]: e.target.value,
     });
   };
-
   const signIn = (e) => {
-    // UNCOMMENT AND UPDATE WHEN WE HAVE AN API IN PLACE:
-    // axios.post('LOGIN API LINK', credentials)
-    //   .then( res => {
-    //     localStorage.setItem("token", res.data.token);
-    //     localStorage.setItem("role", res.data.role);
-    //     props.history.push('/classes')
-    //   })
-    //   .catch(err=> {
-    //     console.log(err);
-    //   })
-    credentials.email === 'instructor' ? localStorage.setItem("role", "instructor"): localStorage.setItem("role", "client");
-    localStorage.getItem("role") === 'instructor' ? props.history.push("/classes"): props.history.push("/upcoming-classes")
-  };
+    axios.post('/users', credentials)
+      .then( res => {
+        localStorage.setItem("token", res.data.token);
+        props.history.push('/classes')
+      })
+      .catch(err=> {
+        console.log(err);
+      })
+  }
 
   return (
     <BoxContainer>
