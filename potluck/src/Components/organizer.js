@@ -16,7 +16,7 @@ margin: 0 5%;
     background-repeat: no-repeat;
     height: 800px;
     max-width:100%;
-    flex-wrap:wrap;
+    
     
 
     form {
@@ -26,30 +26,20 @@ margin: 0 5%;
         border-radius: 50px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        flex-wrap:wrap;
-        height: 50%;
+        justify-items: center;
+        height: 60%;
         width: 43%
-       
-        
     }  
     h2 {
         width: 100%;
         color: crimson;
-        tex-align:center
-        padding-top: 0%;
-        margin-top:1%;
-        padding-bottom: 0%;
+        text-align:center;
         text-shadow: 1px 1px orange;
         text-decoration: underline;
-        margin-bottom:3.5%;
-        text-align: center;
     }
     .subText {
-        margin-top: -2%;
         text-align: center;
         font-size: 0.9rem;
-        margin-bottom:2%;
      }
      p {
         font-size: 0.8rem;
@@ -60,42 +50,34 @@ margin: 0 5%;
     }
     input[type=text] {
         border-radius: 7px;
-        margin-right:22%;
-        margin-left:5%;
+        margin: 1% 22% 1% 5%;
     }
     input[type=time]{
+        padding:0 5%;
         border-radius: 7px;
-        margin-right:22%;
-        margin-left:5%;
-        padding: 0 5%;
+        margin: 1% 22% 1% 5%;
     }
     input[type=date]{
         border-radius: 7px;
-        margin-right:22%;
-        margin-left:5%;
+        margin: 1% 22% 1% 5%;
     }
     .host {
-        margin-bottom:2%;
         display:flex;
         justify-content: flex-end;
     }
     .potluck {
-        margin-bottom:2%;
         display:flex;
         justify-content:flex-end;
     }
     .date {
-        margin-bottom:2%;
         display:flex;
         justify-content:flex-end;
     }
     .time{
-        margin-bottom:2%;
         display:flex;
         justify-content:flex-end;
     }
     .location{
-        margin-bottom:2%;
         display:flex;
         justify-content:flex-end;
     }
@@ -117,6 +99,11 @@ margin: 0 5%;
         transform: scale(1.2);
         background-color: black;
         color: green;
+    }
+    .errors {
+        color:red;
+        font-size:0.65rem;
+        text-align:center;
     }
 
 `
@@ -218,7 +205,7 @@ export default function Organizer() {
                 </div>
             </div>
 
-            <div>
+            <div className='errors'>
                 <div>{formErrors.host}</div>
                 <div>{formErrors.potluck}</div>
                 <div>{formErrors.date}</div>

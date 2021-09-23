@@ -25,29 +25,20 @@ const StyledDiv = styled.div`
         border-radius: 50px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        height: 50%;
-        width: 43%
-        
+        height: 60%;
+        justify-items:center;
+        min-width:43%; 
     }  
     h2 {
-        
-        justify-content: center;
-        width: 100%;
         color: green;
-        text-align: center;
-        padding-top: 0%;
-        padding-bottom: 0%;
+        text-align: center; 
         text-shadow: 1px 1px orange;
         text-decoration: underline;
-        margin-bottom:3.5%;
-        margin-top: -8%;
     }
-    .subText {
-       margin-top: -2%;
+    .subText { 
+       padding:0;
        text-align: center;
        font-size: 0.9rem;
-       margin-bottom:4.3%;
     }
     p {
         font-size: 0.8rem;
@@ -57,41 +48,37 @@ const StyledDiv = styled.div`
         color:red;
     }
     .name{
-        align-items: center;
+        align-items:center;
         display: flex;
-        justify-content:center;
-        padding: 0 12%;
-        margin-bottom: 2%;
-        margin-top: 1%;
+        justify-content:flex-end;
+        
     }
     input[type=text] {
         border-radius: 7px;
         margin-left: 5%;
-        
+        margin-right:22%;
+        margin-top:1.5%;
+        margin-bottom:1.5%;
     }
     .plusOne {
+        align-items:center;
         display: flex;
-        justify-content: center;
-        margin-bottom:-2%;
-        padding-top:1%;
-        margin-right:0.5%;
+        justify-content: flex-end;
     }
     .items {
         display:flex;
-        justify-content: center;
-        margin-right:-7.9%;
+        justify-content: flex-end;
     }
     .special {
         display:flex;
-        justify-content: center;
-        margin-right: 7.5%;
+        justify-content: flex-end;
     }
     .button{
+        margin-top:3%;
+        margin-bottom:3%;
         diplay:flex;
         justify-content:center;
        text-align:center;
-       margin-top:5%;
-       margin-bottom:-5%;
     }
     button:hover:enabled {
         transition: all 1s;
