@@ -35,7 +35,7 @@ margin: 0 5%;
     }  
     h2 {
         width: 100%;
-        color: red;
+        color: crimson;
         tex-align:center
         padding-top: 0%;
         margin-top:1%;
