@@ -1,12 +1,24 @@
-import React, { component }from 'react';
+import React, { Component }from 'react';
 import { Route, Switch, Link, BrowserRouter } from 'react-router-dom';
 import Home from './home';
 import Organizer from './organizer';
 import Guest from './guest';
 import styled from 'styled-components';
 import { AccountBox } from "./accountBox";
+import NavBar from './navbar';
+import MyBookings from "./MyBookings";
+import UpcomingClasses from "./UpcomingClasses";
+import './App.css'
 
-
+const AppContainer = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5%;
+`;
 
 const StyledNav = styled.nav`
   background-image: url('https://images.unsplash.com/photo-1498676077434-7540603d2dda?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80');
@@ -54,33 +66,35 @@ const StyledNav = styled.nav`
 const App = () => {
   return (
     <BrowserRouter>
-      <StyledNav>
-        <h1><span>Potluck</span> Planner</h1>
+      {/* <StyledNav> */}
+        <NavBar/>
+        {/* <h1><span>Potluck</span> Planner</h1>
         <div>
           <Link to='/'>Home</Link>
           <Link to='/organizer'>Organizer</Link>
           <Link to='/guest'>Guest</Link>
-        </div>
-      </StyledNav>
-      
+        </div> */}
+      {/* </StyledNav> */}
+      <AppContainer>
         <Switch>
+
         <Route path="/signin" component={AccountBox} />
           <Route path="/signup" component={AccountBox} />
-          {/* <Route path='/signin'>
-            <AccountBox/>
-          </Route> */}
+       
           <Route path='/organizer'>
             <Organizer />
           </Route>
           <Route path='/guest'>
             <Guest />
           </Route>
-          <Route path='/'>
+          <Route exact path='/'>
             <Home />
           </Route>
+          <Route path="/bookings" component={MyBookings} />
+          <Route path="/upcoming-potlucks" component={UpcomingClasses} />
         </Switch>
         
-      
+         </AppContainer>
     </BrowserRouter>
   );
 }

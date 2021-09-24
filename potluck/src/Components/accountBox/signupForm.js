@@ -31,14 +31,15 @@ export function SignupForm(props) {
   }
 
   const signUp = e => {
-      axios.post('/users/register', signUpInfo)
-        .then( res => {
-          localStorage.setItem("token", res.data.token);
-          props.history.push('/classes')
-        })
-        .catch(err=> {
-          console.log(err);
-        })
+      // axios.post('/users/register', signUpInfo)
+      //   .then( res => {
+      //     localStorage.setItem("token", res.data.token);
+      //     props.history.push('/classes')
+      //   })
+      //   .catch(err=> {
+      //     console.log(err);
+      //   })
+      props.history.push('/organizer')
   }
 
   return (

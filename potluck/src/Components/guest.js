@@ -81,7 +81,7 @@ const StyledDiv = styled.div`
     .button{
         margin-top:3%;
         margin-bottom:3%;
-        diplay:flex;
+        display:flex;
         justify-content:center;
        text-align:center;
     }

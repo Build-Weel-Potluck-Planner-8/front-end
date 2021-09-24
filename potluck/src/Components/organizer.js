@@ -98,7 +98,7 @@ margin: 0 5%;
         justify-content:flex-end;
     }
     .button{
-        diplay:flex;
+        display:flex;
         justify-content:center;
        text-align:center;
     }
