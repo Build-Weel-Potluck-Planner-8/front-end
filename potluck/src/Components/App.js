@@ -87,7 +87,7 @@ const App = () => {
           <Route path='/guest'>
             <Guest />
           </Route>
-          <Route exact path='/'>
+          <Route exact path='/home'>
             <Home />
           </Route>
           <Route path="/bookings" component={MyBookings} />
