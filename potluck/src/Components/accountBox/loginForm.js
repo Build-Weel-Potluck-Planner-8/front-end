@@ -28,14 +28,16 @@ export function LoginForm(props) {
     });
   };
   const signIn = (e) => {
-    axios.post('/users', credentials)
-      .then( res => {
-        localStorage.setItem("token", res.data.token);
-        props.history.push('/classes')
-      })
-      .catch(err=> {
-        console.log(err);
-      })
+    // axios.post('/users', credentials)
+    //   .then( res => {
+    //     localStorage.setItem("token", res.data.token);
+    //     props.history.push('/classes')
+    //   })
+    //   .catch(err=> {
+    //     console.log(err);
+    //   })
+    credentials.email === 'client' ? localStorage.setItem("role", "client") : localStorage.setItem("role", "client") 
+    localStorage.getItem("role") === 'client' ? props.history.push("/organizer"): props.history.push("/organizer")
   }
 
   return (

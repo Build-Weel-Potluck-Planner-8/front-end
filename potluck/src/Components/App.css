@@ -1,0 +1,83 @@
+* {
+    /* color: black; */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "PT Sans", sans-serif;
+  }
+  
+  .classBox h3 {
+    color: white;
+  }
+  
+  .classbox {
+    max-width: 70%;
+    background-color: rgb(143, 191, 193);
+    margin: 1rem 2rem;
+    border-radius: 20px;
+  }
+  .classBox {
+    max-width: 80%;
+    background-color: rgb(200, 70, 34);
+    margin: 1rem 1rem 1rem 5rem;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+  }
+  
+  .classBox p {
+    margin-left: 2rem;
+    color: black;
+  }
+  
+  .classBox span {
+    font-weight: bold;
+  }
+  
+  .classBox button {
+    margin: 0.4rem 3rem;
+    padding: 0.5rem 1rem;
+    background-color: rgb(109, 35, 15);
+    border-style: none;
+    border-radius: 10px;
+    color: black;
+  }
+  .classBox button:hover {
+    transform: scale(1.2);
+    background-color: rgb(214, 85, 85);
+  }
+  
+  .classbox p {
+    margin-left: 2rem;
+  }
+  
+  .classbox span {
+    font-weight: bold;
+  }
+  
+  .classbox button {
+    margin: 0.4rem 3rem;
+    padding: 0.5rem 1rem;
+    background-color: darkcyan;
+    border-style: none;
+    border-radius: 10px;
+  }
+  .classbox button:hover {
+    transform: scale(1.2);
+    background-color: rgb(7, 105, 105);
+  }
+  
+  .home {
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+  
+  .form {
+    margin: 10rem 1rem 1rem 2rem;
+  }
+  .warning {
+    color: red;
+    font-weight: bold;
+  }
